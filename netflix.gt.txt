@@ -1,0 +1,17 @@
+CREATE TABLE `detalle-pelicula` (
+`peli_detalles` INT NOT NULL,
+`cast` VARCHAR(50) NOT NULL,
+`cantidad` VARCHAR(50) NOT NULL,
+`precio` INT NOT NULL,
+PRIMARY KEY (`peli_detalles`)
+) ENGINE = InnoDB;
+
+CREATE TABLE `enc-pelicula`(
+`peli_id` INT NOT NULL,
+`nombre`  VARCHAR (50),
+`Lugar_filmacion` VARCHAR (50),
+`fecha_estreno` VARCHAR (50),
+`peli_detalles`INT NOT NULL,
+PRIMARY KEY (`peli_id`),
+ FOREIGN KEY (`peli_detalles`) REFERENCES `detalle-pelicula` (`peli_detalles`)
+) ENGINE = InnoDB;
